@@ -55,14 +55,14 @@ const BottomNavBar = (): JSX.Element => {
 				}}
 			/>
 			<Tab.Screen
-				name="Shopping Cart"
+				name="ShoppingCart"
 				component={ShoppingCartScreen}
 				options={{
 					tabBarIcon: ({ focused }) => tabBarIcon(focused, Home),
 				}}
 			/>
 			<Tab.Screen
-				name="Option"
+				name="Settings"
 				component={SettingsScreen}
 				options={{
 					tabBarIcon: ({ focused }) => tabBarIcon(focused, Option),

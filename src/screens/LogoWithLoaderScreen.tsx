@@ -11,6 +11,7 @@ const LogoWithLoaderScreen = (): JSX.Element => {
 		</View>
 	);
 };
+
 const styles = StyleSheet.create({
 	mainContainer: {
 		flex: 1,
