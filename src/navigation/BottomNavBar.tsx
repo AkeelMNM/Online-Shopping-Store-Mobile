@@ -7,6 +7,7 @@ import ShoppingCartScreen from '../screens/ShoppingCart';
 import Home from '../assets/images/Home.png';
 import Search from '../assets/images/Search.png';
 import Option from '../assets/images/Option.png';
+import ShoppingCart from '../assets/images/ShoppingCart.png';
 import SettingsScreen from '../screens/Settings';
 
 const Tab = createBottomTabNavigator();
@@ -25,7 +26,7 @@ const tabBarIcon = (
 
 const setActiveColor = (focused: boolean): Object => {
 	if (focused) {
-		return { tintColor: 'red' };
+		return { tintColor: '#000000' };
 	} else {
 		return {};
 	}
@@ -36,7 +37,7 @@ const BottomNavBar = (): JSX.Element => {
 		<Tab.Navigator
 			screenOptions={{
 				headerShown: false,
-				tabBarActiveTintColor: '#FFFFFF',
+				tabBarActiveTintColor: '#000000',
 				tabBarStyle: styles.tabBarStyle,
 				tabBarLabelStyle: styles.tabBarLabelStyle,
 			}}>
@@ -55,10 +56,11 @@ const BottomNavBar = (): JSX.Element => {
 				}}
 			/>
 			<Tab.Screen
-				name="ShoppingCart"
+				name="Shopping Cart"
 				component={ShoppingCartScreen}
 				options={{
-					tabBarIcon: ({ focused }) => tabBarIcon(focused, Home),
+					tabBarIcon: ({ focused }) =>
+						tabBarIcon(focused, ShoppingCart),
 				}}
 			/>
 			<Tab.Screen
@@ -77,16 +79,17 @@ const styles = StyleSheet.create({
 		height: 24,
 		width: 24,
 		marginTop: 9,
-		tintColor: '#FFFFFF',
+		tintColor: 'grey',
 	},
 	tabBarStyle: {
 		height: 60,
 		paddingBottom: 0,
-		backgroundColor: 'black',
+		backgroundColor: 'white',
 	},
 	tabBarLabelStyle: {
 		marginBottom: 6,
 		marginTop: 6,
+		color: 'grey',
 	},
 });
 

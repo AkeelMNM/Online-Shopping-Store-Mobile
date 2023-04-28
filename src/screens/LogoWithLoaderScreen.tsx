@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 		height: '100%',
 		top: 0,
 		left: 0,
-		backgroundColor: '#95DAC1',
+		//backgroundColor: '#95DAC1',
 	},
 	logo: {
 		width: '60%',

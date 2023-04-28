@@ -1,14 +1,25 @@
 import React from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/RootStackParamType';
+import { Text } from '../components';
 
 type ShoppingCartProps = {
 	navigation: NativeStackNavigationProp<RootStackParamList, 'ShoppingCart'>;
 };
 
 const ShoppingCart = ({}: ShoppingCartProps): JSX.Element => {
-	return <View />;
+	return (
+		<View style={styles.mainContainer}>
+			<Text>Shopping Cart</Text>
+		</View>
+	);
 };
+
+const styles = StyleSheet.create({
+	mainContainer: {
+		flex: 1,
+	},
+});
 
 export default ShoppingCart;

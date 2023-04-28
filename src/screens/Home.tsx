@@ -11,7 +11,7 @@ type HomeProps = {
 const Home = ({}: HomeProps): JSX.Element => {
 	return (
 		<View style={styles.mainContainer}>
-			<Text>Hello</Text>
+			<Text>Home</Text>
 		</View>
 	);
 };
@@ -19,7 +19,6 @@ const Home = ({}: HomeProps): JSX.Element => {
 const styles = StyleSheet.create({
 	mainContainer: {
 		flex: 1,
-		backgroundColor: 'green',
 	},
 });
 
