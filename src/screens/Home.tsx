@@ -1,16 +1,30 @@
-import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/RootStackParamType';
-import { SearchBar, Text } from '../components';
+import { Products, SearchBar, Text } from '../components';
 import { FlatList } from 'react-native-gesture-handler';
-import Product from '../components/Product';
+import { useAppSelector, useAppDispatch } from '../redux/hook';
+import { Product } from '../types';
+import { fetchBestSellerProducts } from '../redux/product';
 
 type HomeProps = {
 	navigation: NativeStackNavigationProp<RootStackParamList, 'Home'>;
 };
 
 const Home = ({}: HomeProps): JSX.Element => {
+	const dispatch = useAppDispatch();
+
+	const bestSeller: Product[] = useAppSelector(
+		state => state.product.bestSeller,
+	);
+
+	useEffect(() => {
+		//dispatch(fetchContents());
+		dispatch(fetchBestSellerProducts());
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
 	const searchProducts = (value: string): void => {
 		console.log(value);
 	};
@@ -31,7 +45,7 @@ const Home = ({}: HomeProps): JSX.Element => {
 	};
 
 	return (
-		<View style={styles.mainContainer}>
+		<ScrollView contentContainerStyle={styles.mainContainer}>
 			<View style={styles.appNameContainer}>
 				<Text style={styles.appNameText}>Fashion Studio</Text>
 			</View>
@@ -55,22 +69,32 @@ const Home = ({}: HomeProps): JSX.Element => {
 				<Text style={styles.titleText} type={'title'}>
 					Best Seller
 				</Text>
-				<Product
-					image={
-						'https://www.kasandbox.org/programming-images/avatars/leaf-blue.png'
-					}
-					name={'T-Shirt'}
-					price={25}
-					onPress={() => {}}
+				<FlatList
+					data={bestSeller}
+					renderItem={({ item, index }) => (
+						<Products
+							key={index}
+							image={
+								'https://www.kasandbox.org/programming-images/avatars/leaf-blue.png'
+							}
+							name={item.title}
+							price={item.variants[0].price}
+							onPress={() => {}}
+						/>
+					)}
+					horizontal={true}
+					contentContainerStyle={styles.categorySection}
+					ItemSeparatorComponent={itemSeparator}
+					showsHorizontalScrollIndicator={false}
 				/>
 			</View>
-		</View>
+		</ScrollView>
 	);
 };
 
 const styles = StyleSheet.create({
 	mainContainer: {
-		flex: 1,
+		flexGrow: 1,
 	},
 	appNameContainer: {
 		justifyContent: 'center',

@@ -1,3 +1,3 @@
 export * from './Text';
 export * from './SearchBar';
-export * from './Product';
+export * from './Products';

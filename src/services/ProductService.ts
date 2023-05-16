@@ -1,6 +1,8 @@
 import { Product } from '../types';
+import Config from 'react-native-config';
+import { products } from '../utils/DummyData';
 
-const API_NAME: string = '';
+const API_NAME: string = Config.FASHION_STORE_API_ADDRESS || '';
 
 export const fetchProducts = async (): Promise<Array<Product>> => {
 	try {
@@ -35,12 +37,18 @@ export const fetchProductFilter = async (): Promise<Array<Product>> => {
 };
 
 export const fetchBestSellerProducts = async (): Promise<Array<Product>> => {
-	try {
-		const response = await fetch(`${API_NAME}/product/bestseller`, {
-			method: 'GET',
-		});
+	console.log(`${API_NAME}/product/bestseller`);
 
-		const responseData = await response.json();
+	try {
+		// const response = await fetch(`${API_NAME}/product/bestseller`, {
+		// 	method: 'GET',
+		// 	headers: {
+		// 		'Content-type': 'application/json',
+		// 	},
+		// });
+
+		// const responseData = await response.json();
+		const responseData = products.filter(value => value.isBestSeller);
 		console.log('best seller products fetched', responseData);
 
 		return responseData || [];
