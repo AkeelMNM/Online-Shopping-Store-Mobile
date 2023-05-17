@@ -1,11 +1,15 @@
 import React from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Home from '../screens/Home';
+import {
+	createStackNavigator,
+	TransitionPresets,
+} from '@react-navigation/stack';
+import Home from '../screens/HomeScreen';
 import InitialScreen from '../screens/InitialScreen';
 import { RootStackParamList } from './RootStackParamType';
 import BottomNavBar from './BottomNavBar';
 import LogoWithLoaderScreen from '../screens/LogoWithLoaderScreen';
+import ProductModal from '../screens/ProductModal';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -36,7 +40,7 @@ const NavRouter = () => {
 					}}
 				/>
 				<Stack.Screen
-					name="Home"
+					name="HomeScreen"
 					component={Home}
 					options={{ headerShown: false }}
 				/>
@@ -44,6 +48,14 @@ const NavRouter = () => {
 					name="LogoWithLoaderScreen"
 					component={LogoWithLoaderScreen}
 					options={{ headerShown: false }}
+				/>
+				<Stack.Screen
+					name="ProductModal"
+					component={ProductModal}
+					options={{
+						headerShown: false,
+						...TransitionPresets.ModalPresentationIOS,
+					}}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>

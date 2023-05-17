@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet, Image, ImageSourcePropType } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../screens/Home';
-import ProductsScreen from '../screens/Products';
-import ShoppingCartScreen from '../screens/ShoppingCart';
+import HomeScreen from '../screens/HomeScreen';
+import ProductsScreen from '../screens/ProductsScreen';
+import ShoppingCartScreen from '../screens/ShoppingCartScreen';
 import Home from '../assets/images/Home.png';
 import Search from '../assets/images/Search.png';
 import Option from '../assets/images/Option.png';
 import ShoppingCart from '../assets/images/ShoppingCart.png';
-import SettingsScreen from '../screens/Settings';
+import SettingsScreen from '../screens/SettingsScreen';
 
 const Tab = createBottomTabNavigator();
 

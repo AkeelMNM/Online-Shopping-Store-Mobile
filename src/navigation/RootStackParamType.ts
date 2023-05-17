@@ -1,9 +1,12 @@
 export type RootStackParamList = {
 	InitialScreen: undefined;
 	BottomNavBar: undefined;
-	Home: undefined;
+	HomeScreen: undefined;
 	LogoWithLoaderScreen: undefined;
-	Products: undefined;
-	ShoppingCart: undefined;
-	Settings: undefined;
+	ProductsScreen: undefined;
+	ShoppingCartScreen: undefined;
+	SettingsScreen: undefined;
+	ProductModal: {
+		productId: string;
+	};
 };

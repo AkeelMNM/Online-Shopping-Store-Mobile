@@ -6,12 +6,13 @@ const API_NAME: string = Config.FASHION_STORE_API_ADDRESS || '';
 
 export const fetchProducts = async (): Promise<Array<Product>> => {
 	try {
-		const response = await fetch(`${API_NAME}/product`, {
-			method: 'GET',
-		});
+		// const response = await fetch(`${API_NAME}/product`, {
+		// 	method: 'GET',
+		// });
 
-		const responseData = await response.json();
-		console.log('products fetched', responseData);
+		// const responseData = await response.json();
+		const responseData = products;
+		//console.log('products fetched', responseData);
 
 		return responseData || [];
 	} catch (error) {
@@ -49,7 +50,7 @@ export const fetchBestSellerProducts = async (): Promise<Array<Product>> => {
 
 		// const responseData = await response.json();
 		const responseData = products.filter(value => value.isBestSeller);
-		console.log('best seller products fetched', responseData);
+		//console.log('best seller products fetched', responseData);
 
 		return responseData || [];
 	} catch (error) {
