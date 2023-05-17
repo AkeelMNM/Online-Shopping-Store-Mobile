@@ -5,7 +5,10 @@ import { RootStackParamList } from '../navigation/RootStackParamType';
 import { Text } from '../components';
 
 type ShoppingCartProps = {
-	navigation: NativeStackNavigationProp<RootStackParamList, 'ShoppingCart'>;
+	navigation: NativeStackNavigationProp<
+		RootStackParamList,
+		'ShoppingCartScreen'
+	>;
 };
 
 const ShoppingCart = ({}: ShoppingCartProps): JSX.Element => {

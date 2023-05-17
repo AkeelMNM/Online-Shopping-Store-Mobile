@@ -20,7 +20,7 @@ const InitialScreen = ({ navigation }: InitialScreenProps): JSX.Element => {
 		setTimeout(() => {
 			setShowLoader(false);
 			navigateToHome();
-		}, 1500);
+		}, 500);
 	};
 
 	const navigateToHome = () => {

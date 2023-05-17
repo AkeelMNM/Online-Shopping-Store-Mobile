@@ -6,13 +6,13 @@ import { Products, SearchBar, Text } from '../components';
 import { FlatList } from 'react-native-gesture-handler';
 import { useAppSelector, useAppDispatch } from '../redux/hook';
 import { Product } from '../types';
-import { fetchBestSellerProducts } from '../redux/product';
+import { fetchBestSellerProducts, fetchProducts } from '../redux/product';
 
 type HomeProps = {
-	navigation: NativeStackNavigationProp<RootStackParamList, 'Home'>;
+	navigation: NativeStackNavigationProp<RootStackParamList, 'HomeScreen'>;
 };
 
-const Home = ({}: HomeProps): JSX.Element => {
+const Home = ({ navigation }: HomeProps): JSX.Element => {
 	const dispatch = useAppDispatch();
 
 	const bestSeller: Product[] = useAppSelector(
@@ -22,11 +22,16 @@ const Home = ({}: HomeProps): JSX.Element => {
 	useEffect(() => {
 		//dispatch(fetchContents());
 		dispatch(fetchBestSellerProducts());
+		dispatch(fetchProducts());
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const searchProducts = (value: string): void => {
 		console.log(value);
+	};
+
+	const navigateToProductModal = (id: string): void => {
+		navigation.navigate('ProductModal', { productId: id });
 	};
 
 	const renderItem = ({ item }: { item: string }): JSX.Element => {
@@ -79,7 +84,9 @@ const Home = ({}: HomeProps): JSX.Element => {
 							}
 							name={item.title}
 							price={item.variants[0].price}
-							onPress={() => {}}
+							onPress={() => {
+								navigateToProductModal(item.id);
+							}}
 						/>
 					)}
 					horizontal={true}
@@ -95,6 +102,7 @@ const Home = ({}: HomeProps): JSX.Element => {
 const styles = StyleSheet.create({
 	mainContainer: {
 		flexGrow: 1,
+		backgroundColor: 'white',
 	},
 	appNameContainer: {
 		justifyContent: 'center',

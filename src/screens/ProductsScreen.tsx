@@ -5,7 +5,7 @@ import { RootStackParamList } from '../navigation/RootStackParamType';
 import { Text } from '../components';
 
 type ProductsProps = {
-	navigation: NativeStackNavigationProp<RootStackParamList, 'Products'>;
+	navigation: NativeStackNavigationProp<RootStackParamList, 'ProductsScreen'>;
 };
 
 const Products = ({}: ProductsProps): JSX.Element => {

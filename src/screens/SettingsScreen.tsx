@@ -5,7 +5,7 @@ import { RootStackParamList } from '../navigation/RootStackParamType';
 import { Text } from '../components';
 
 type SettingsProps = {
-	navigation: NativeStackNavigationProp<RootStackParamList, 'Settings'>;
+	navigation: NativeStackNavigationProp<RootStackParamList, 'SettingsScreen'>;
 };
 
 const Settings = ({}: SettingsProps): JSX.Element => {
