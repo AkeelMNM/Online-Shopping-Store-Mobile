@@ -46,7 +46,9 @@ const Products = ({
 const styles = StyleSheet.create({
 	mainContainer: {
 		flexGrow: 1,
-		alignItems: 'center',
+		height: 335,
+		width: '48%',
+		maxWidth: '50%',
 		backgroundColor: '#FFFFFF',
 		borderRadius: 15,
 		shadowOffset: { width: 0, height: 0 },
@@ -54,24 +56,20 @@ const styles = StyleSheet.create({
 		shadowRadius: 8,
 		elevation: 8,
 		justifyContent: 'space-between',
+		margin: 5,
 	},
 	imageContainer: {
 		height: 200,
-		width: 250,
 		borderTopEndRadius: 15,
 		borderTopStartRadius: 15,
 		backgroundColor: '#eceff1',
 	},
 	textContainer: {
-		width: 250,
 		height: 120,
-		padding: 5,
-		borderBottomEndRadius: 15,
-		borderBottomStartRadius: 15,
+		padding: 10,
 		justifyContent: 'space-between',
 	},
 	image: {
-		width: 250,
 		flex: 1,
 		padding: 10,
 		alignItems: 'center',
@@ -95,8 +93,6 @@ const styles = StyleSheet.create({
 		marginTop: 10,
 	},
 	textView: {
-		width: 240,
-		height: 50,
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignContent: 'center',
