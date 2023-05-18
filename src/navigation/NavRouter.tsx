@@ -17,8 +17,7 @@ const MyTheme = {
 	...DefaultTheme,
 	colors: {
 		...DefaultTheme.colors,
-		background: 'transparent',
-		card: '#F2F5C8',
+		background: '#f3f3ff',
 	},
 };
 

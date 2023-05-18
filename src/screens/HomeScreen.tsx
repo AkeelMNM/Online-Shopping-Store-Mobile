@@ -58,7 +58,7 @@ const Home = ({ navigation }: HomeProps): JSX.Element => {
 				<SearchBar onSearch={searchProducts} />
 			</View>
 			<View style={styles.categoryContainer}>
-				<Text style={styles.titleText} type={'title'}>
+				<Text style={styles.titleText} type={'body'}>
 					Categories
 				</Text>
 				<FlatList
@@ -71,8 +71,8 @@ const Home = ({ navigation }: HomeProps): JSX.Element => {
 				/>
 			</View>
 			<View style={styles.bestSellerContainer}>
-				<Text style={styles.titleText} type={'title'}>
-					Best Seller
+				<Text style={styles.titleText} type={'body'}>
+					Best Sellers
 				</Text>
 				<FlatList
 					data={bestSeller}
@@ -102,7 +102,7 @@ const Home = ({ navigation }: HomeProps): JSX.Element => {
 const styles = StyleSheet.create({
 	mainContainer: {
 		flexGrow: 1,
-		backgroundColor: 'white',
+		backgroundColor: '#f3f3ff',
 	},
 	appNameContainer: {
 		justifyContent: 'center',

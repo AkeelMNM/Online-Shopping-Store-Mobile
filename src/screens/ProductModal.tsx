@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { useAppSelector } from '../redux/hook';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Product } from '../types';
-import { CustomCarousel, Text } from '../components';
+import { CustomCarousel, NumberPicker, Text } from '../components';
 import _ from 'lodash';
 import { RootStackParamList } from '../navigation/RootStackParamType';
 
@@ -15,7 +15,7 @@ type ProductModalProps = NativeStackScreenProps<
 const ProductModal = ({ navigation, route }: ProductModalProps) => {
 	const [selectedColor, setSelectedColor] = useState('');
 	const [selectedSize, setSelectedSize] = useState('');
-	//const [selectedCount, setSelectedCount] = useState(1);
+	const [selectedCount, setSelectedCount] = useState(1);
 
 	const product: Product = useAppSelector(state => {
 		return state.product.products.find((item: Product) => {
@@ -25,6 +25,7 @@ const ProductModal = ({ navigation, route }: ProductModalProps) => {
 
 	const productColors = _.uniqBy(product && product.variants, 'color');
 	const productSizes = _.uniqBy(product && product.variants, 'size');
+	const productImages = _.uniq(_.map(product && product.variants, 'image'));
 
 	useEffect(() => {
 		setSelectedColor(_.get(product, 'variants[0].color', ''));
@@ -37,13 +38,15 @@ const ProductModal = ({ navigation, route }: ProductModalProps) => {
 
 	const setOptionSelectionStyle = (value: string, selectedValue: string) => {
 		if (value === selectedValue) {
-			return { backgroundColor: 'black' };
+			return { backgroundColor: '#ec7431', borderColor: '#ec7431' };
 		} else {
-			return { backgroundColor: 'white' };
+			return { backgroundColor: 'white', borderColor: 'grey' };
 		}
 	};
 
-	const productImages = _.uniq(_.map(product && product.variants, 'image'));
+	const onPressCount = (value: number): void => {
+		setSelectedCount(value);
+	};
 
 	return (
 		<View style={styles.mainContainer}>
@@ -125,12 +128,16 @@ const ProductModal = ({ navigation, route }: ProductModalProps) => {
 				</View>
 				<View style={styles.sizeContainer}>
 					<Text style={styles.labelText}>Qty</Text>
-					<View style={styles.categoryContainer} />
+					<View style={styles.categoryContainer}>
+						<NumberPicker onPress={onPressCount} />
+					</View>
 				</View>
 			</View>
 			<View style={styles.buttonContainer}>
 				<TouchableOpacity activeOpacity={0.7} style={styles.button}>
-					<Text style={styles.buttonText}>Add To Cart</Text>
+					<Text color="white" style={styles.buttonText}>
+						Add To Cart
+					</Text>
 				</TouchableOpacity>
 			</View>
 		</View>
@@ -148,8 +155,8 @@ const styles = StyleSheet.create({
 		flex: 1,
 		width: '100%',
 		height: '50%',
-		padding: 5,
-		borderRadius: 5,
+		paddingLeft: 10,
+		paddingRight: 10,
 	},
 	detailsContainer: {
 		width: '80%',
@@ -167,6 +174,7 @@ const styles = StyleSheet.create({
 		height: '10%',
 		justifyContent: 'center',
 		alignItems: 'center',
+		marginTop: 5,
 	},
 	navigationContainer: {
 		padding: 10,
@@ -191,7 +199,6 @@ const styles = StyleSheet.create({
 	productSize: {
 		width: 50,
 		padding: 5,
-		borderColor: 'black',
 		borderWidth: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
@@ -222,9 +229,9 @@ const styles = StyleSheet.create({
 	button: {
 		width: '90%',
 		padding: 10,
-		backgroundColor: 'green',
+		backgroundColor: '#816dff',
 		alignItems: 'center',
-		borderRadius: 5,
+		borderRadius: 10,
 	},
 	categoryContainer: {
 		width: '80%',
@@ -241,7 +248,7 @@ const styles = StyleSheet.create({
 	},
 	buttonText: {
 		fontSize: 18,
-		fontWeight: '700',
+		fontWeight: '600',
 	},
 });
 

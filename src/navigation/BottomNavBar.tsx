@@ -26,7 +26,7 @@ const tabBarIcon = (
 
 const setActiveColor = (focused: boolean): Object => {
 	if (focused) {
-		return { tintColor: '#000000' };
+		return { tintColor: '#ec7431' };
 	} else {
 		return {};
 	}
@@ -85,6 +85,8 @@ const styles = StyleSheet.create({
 		height: 60,
 		paddingBottom: 0,
 		backgroundColor: 'white',
+		borderTopEndRadius: 25,
+		borderTopStartRadius: 25,
 	},
 	tabBarLabelStyle: {
 		marginBottom: 6,
