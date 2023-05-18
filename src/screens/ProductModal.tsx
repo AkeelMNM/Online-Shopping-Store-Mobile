@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import { useAppSelector } from '../redux/hook';
+import { useAppSelector, useAppDispatch } from '../redux/hook';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { Product } from '../types';
+import { CartItem, Product } from '../types';
 import { CustomCarousel, NumberPicker, Text } from '../components';
 import _ from 'lodash';
 import { RootStackParamList } from '../navigation/RootStackParamType';
+import { addItemToCart } from '../redux/cart';
 
 type ProductModalProps = NativeStackScreenProps<
 	RootStackParamList,
@@ -13,6 +14,7 @@ type ProductModalProps = NativeStackScreenProps<
 >;
 
 const ProductModal = ({ navigation, route }: ProductModalProps) => {
+	const dispatch = useAppDispatch();
 	const [selectedColor, setSelectedColor] = useState('');
 	const [selectedSize, setSelectedSize] = useState('');
 	const [selectedCount, setSelectedCount] = useState(1);
@@ -46,6 +48,34 @@ const ProductModal = ({ navigation, route }: ProductModalProps) => {
 
 	const onPressCount = (value: number): void => {
 		setSelectedCount(value);
+	};
+
+	const onPressAddToCart = (): void => {
+		const variant = _.find(product.variants, {
+			color: selectedColor,
+			size: selectedSize,
+		});
+
+		if (variant) {
+			const cartItem: CartItem = {
+				userId: 'id', //_.get(user, '_id', ''),
+				productId: product.id,
+				variantId: variant.id,
+				quantity: selectedCount,
+				title: product.title,
+				size: variant.size,
+				color: variant.color,
+				price: parseInt(variant.price.replace(/\D/g, ''), 10),
+				isFreeShipping: false,
+				image: variant.image,
+				isPaymentComplete: false,
+			};
+
+			dispatch(addItemToCart(cartItem));
+			console.log('The item is added to the cart.');
+		} else {
+			console.log('Sorry this product not available');
+		}
 	};
 
 	return (
@@ -134,7 +164,10 @@ const ProductModal = ({ navigation, route }: ProductModalProps) => {
 				</View>
 			</View>
 			<View style={styles.buttonContainer}>
-				<TouchableOpacity activeOpacity={0.7} style={styles.button}>
+				<TouchableOpacity
+					activeOpacity={0.7}
+					style={styles.button}
+					onPress={onPressAddToCart}>
 					<Text color="white" style={styles.buttonText}>
 						Add To Cart
 					</Text>
