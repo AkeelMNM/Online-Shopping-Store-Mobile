@@ -4,14 +4,14 @@ import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/RootStackParamType';
 import { Text } from '../components';
 
-type ShoppingCartProps = {
+type ShoppingCartScreenProps = {
 	navigation: NativeStackNavigationProp<
 		RootStackParamList,
 		'ShoppingCartScreen'
 	>;
 };
 
-const ShoppingCart = ({}: ShoppingCartProps): JSX.Element => {
+const ShoppingCartScreen = ({}: ShoppingCartScreenProps): JSX.Element => {
 	return (
 		<View style={styles.mainContainer}>
 			<Text>Shopping Cart</Text>
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default ShoppingCart;
+export default ShoppingCartScreen;

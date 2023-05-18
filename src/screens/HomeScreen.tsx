@@ -2,17 +2,17 @@ import React, { useEffect } from 'react';
 import { View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/RootStackParamType';
-import { Products, SearchBar, Text } from '../components';
+import { Products, Text } from '../components';
 import { FlatList } from 'react-native-gesture-handler';
 import { useAppSelector, useAppDispatch } from '../redux/hook';
 import { Product } from '../types';
 import { fetchBestSellerProducts, fetchProducts } from '../redux/product';
 
-type HomeProps = {
+type HomeScreenProps = {
 	navigation: NativeStackNavigationProp<RootStackParamList, 'HomeScreen'>;
 };
 
-const Home = ({ navigation }: HomeProps): JSX.Element => {
+const HomeScreen = ({ navigation }: HomeScreenProps): JSX.Element => {
 	const dispatch = useAppDispatch();
 
 	const bestSeller: Product[] = useAppSelector(
@@ -26,12 +26,12 @@ const Home = ({ navigation }: HomeProps): JSX.Element => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	const searchProducts = (value: string): void => {
-		console.log(value);
-	};
-
 	const navigateToProductModal = (id: string): void => {
 		navigation.navigate('ProductModal', { productId: id });
+	};
+
+	const searchProducts = (value: string): void => {
+		console.log(value);
 	};
 
 	const renderItem = ({ item }: { item: string }): JSX.Element => {
@@ -53,9 +53,6 @@ const Home = ({ navigation }: HomeProps): JSX.Element => {
 		<ScrollView contentContainerStyle={styles.mainContainer}>
 			<View style={styles.appNameContainer}>
 				<Text style={styles.appNameText}>Fashion Studio</Text>
-			</View>
-			<View style={styles.searchContainer}>
-				<SearchBar onSearch={searchProducts} />
 			</View>
 			<View style={styles.categoryContainer}>
 				<Text style={styles.titleText} type={'body'}>
@@ -113,10 +110,6 @@ const styles = StyleSheet.create({
 		fontSize: 28,
 		fontWeight: '800',
 	},
-	searchContainer: {
-		padding: 10,
-		alignItems: 'center',
-	},
 	categoryContainer: {
 		padding: 10,
 	},
@@ -140,8 +133,7 @@ const styles = StyleSheet.create({
 	bestSellerContainer: {
 		flex: 1,
 		padding: 10,
-		//alignItems: 'center',
 	},
 });
 
-export default Home;
+export default HomeScreen;

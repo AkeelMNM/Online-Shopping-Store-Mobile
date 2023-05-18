@@ -4,11 +4,11 @@ import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/RootStackParamType';
 import { Text } from '../components';
 
-type SettingsProps = {
+type SettingsScreenProps = {
 	navigation: NativeStackNavigationProp<RootStackParamList, 'SettingsScreen'>;
 };
 
-const Settings = ({}: SettingsProps): JSX.Element => {
+const SettingsScreen = ({}: SettingsScreenProps): JSX.Element => {
 	return (
 		<View style={styles.mainContainer}>
 			<Text>Settings</Text>
@@ -22,4 +22,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default Settings;
+export default SettingsScreen;
