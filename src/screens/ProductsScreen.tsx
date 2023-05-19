@@ -46,9 +46,10 @@ const ProductsScreen = ({ navigation }: ProductsScreenProps): JSX.Element => {
 						onPress={() => {
 							navigateToProductModal(item.id);
 						}}
+						maxCardWidth={'50%'}
 					/>
 				)}
-				contentContainerStyle={styles.categorySection}
+				contentContainerStyle={styles.productSection}
 				ItemSeparatorComponent={itemSeparator}
 				showsVerticalScrollIndicator={false}
 				numColumns={2}
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
 		width: '100%',
 		height: 10,
 	},
-	categorySection: {
+	productSection: {
 		flexGrow: 1,
 		paddingLeft: 5,
 		paddingRight: 5,

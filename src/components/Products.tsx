@@ -8,6 +8,7 @@ type ProductsProps = {
 	name: string;
 	price: string;
 	onPress: () => void;
+	maxCardWidth?: string;
 };
 
 const Products = ({
@@ -15,9 +16,10 @@ const Products = ({
 	name,
 	price,
 	onPress,
+	maxCardWidth,
 }: ProductsProps): JSX.Element => {
 	return (
-		<View style={styles.mainContainer}>
+		<View style={[styles.mainContainer, { maxWidth: maxCardWidth }]}>
 			<View>
 				<View style={styles.imageContainer}>
 					<FastImage
@@ -48,7 +50,6 @@ const styles = StyleSheet.create({
 		flexGrow: 1,
 		height: 335,
 		width: '48%',
-		maxWidth: '50%',
 		backgroundColor: '#FFFFFF',
 		borderRadius: 15,
 		shadowOffset: { width: 0, height: 0 },

@@ -34,17 +34,6 @@ const HomeScreen = ({ navigation }: HomeScreenProps): JSX.Element => {
 		console.log(value);
 	};
 
-	const renderItem = ({ item }: { item: string }): JSX.Element => {
-		return (
-			<TouchableOpacity
-				style={styles.categoryItem}
-				onPress={() => {
-					searchProducts(item);
-				}}>
-				<Text>{item}</Text>
-			</TouchableOpacity>
-		);
-	};
 	const itemSeparator = (): JSX.Element => {
 		return <View style={styles.itemSeparator} />;
 	};
@@ -60,7 +49,16 @@ const HomeScreen = ({ navigation }: HomeScreenProps): JSX.Element => {
 				</Text>
 				<FlatList
 					data={['hello', 'hello2']}
-					renderItem={renderItem}
+					renderItem={({ item, index }) => (
+						<TouchableOpacity
+							key={index}
+							style={styles.categoryItem}
+							onPress={() => {
+								searchProducts(item);
+							}}>
+							<Text>{item}</Text>
+						</TouchableOpacity>
+					)}
 					horizontal={true}
 					contentContainerStyle={styles.categorySection}
 					ItemSeparatorComponent={itemSeparator}
@@ -84,6 +82,7 @@ const HomeScreen = ({ navigation }: HomeScreenProps): JSX.Element => {
 							onPress={() => {
 								navigateToProductModal(item.id);
 							}}
+							maxCardWidth={'100%'}
 						/>
 					)}
 					horizontal={true}
@@ -119,7 +118,6 @@ const styles = StyleSheet.create({
 		borderRadius: 5,
 	},
 	categorySection: {
-		flexGrow: 1,
 		paddingBottom: 10,
 		paddingLeft: 5,
 	},
@@ -131,7 +129,6 @@ const styles = StyleSheet.create({
 		width: 10,
 	},
 	bestSellerContainer: {
-		flex: 1,
 		padding: 10,
 	},
 });
