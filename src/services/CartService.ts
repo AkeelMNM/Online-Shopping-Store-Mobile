@@ -1,5 +1,6 @@
 import { ApiResponse, CartItem } from '../types';
 import Config from 'react-native-config';
+import { cartItems } from '../utils/DummyData';
 
 const API_NAME: string = Config.FASHION_STORE_API_ADDRESS || '';
 
@@ -7,17 +8,19 @@ export const fetchUsersCartItems = async (
 	userId: string,
 ): Promise<Array<CartItem>> => {
 	try {
-		const response = await fetch(`${API_NAME}/cart/${userId}`, {
-			method: 'GET',
-			credentials: 'include',
-		});
+		// const response = await fetch(`${API_NAME}/cart/${userId}`, {
+		// 	method: 'GET',
+		// 	credentials: 'include',
+		// });
 
-		if (response.status === 200) {
-			const responseData = await response.json();
-			return responseData;
-		} else {
-			return [];
-		}
+		// if (response.status === 200) {
+		// 	const responseData = await response.json();
+		// 	return responseData;
+		// } else {
+		// 	return [];
+		// }
+		console.log(userId);
+		return cartItems;
 	} catch (error) {
 		console.error(error);
 		throw error;

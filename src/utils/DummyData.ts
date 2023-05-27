@@ -326,3 +326,34 @@ export const productFilter = {
 	],
 	trends: ['Best Seller', 'Hot This Month'],
 };
+
+export const cartItems = [
+	{
+		_id: '1',
+		userId: 'U1',
+		productId: 'prod-1',
+		variantId: 'var-1',
+		title: 'Formal Dress Shirts Casual Long Sleeve Slim Fit',
+		size: 'L',
+		color: 'blue',
+		quantity: 2,
+		price: 25,
+		isFreeShipping: false,
+		image: 'https://www.kasandbox.org/programming-images/avatars/leaf-blue.png',
+		isPaymentComplete: false,
+	},
+	{
+		_id: '2',
+		userId: 'U1',
+		productId: 'prod-1',
+		variantId: 'var-1',
+		title: 'Formal Dress Shirts Casual Long Sleeve Slim Fit',
+		size: 'L',
+		color: 'blue',
+		quantity: 2,
+		price: 25,
+		isFreeShipping: false,
+		image: 'https://www.kasandbox.org/programming-images/avatars/leaf-blue.png',
+		isPaymentComplete: false,
+	},
+];
