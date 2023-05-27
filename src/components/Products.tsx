@@ -20,25 +20,23 @@ const Products = ({
 }: ProductsProps): JSX.Element => {
 	return (
 		<View style={[styles.mainContainer, { maxWidth: maxCardWidth }]}>
-			<View>
-				<View style={styles.imageContainer}>
-					<FastImage
-						source={{ uri: image }}
-						style={styles.image}
-						resizeMode={'contain'}
-					/>
-				</View>
-				<View style={styles.textContainer}>
-					<Text style={styles.nameText}>{name}</Text>
-					<View style={styles.textView}>
-						<Text style={styles.priceText}>{price}</Text>
-						<TouchableOpacity
-							style={styles.button}
-							activeOpacity={0.7}
-							onPress={onPress}>
-							<Text color={'white'}>Buy</Text>
-						</TouchableOpacity>
-					</View>
+			<View style={styles.imageContainer}>
+				<FastImage
+					source={{ uri: image }}
+					style={styles.image}
+					resizeMode={'contain'}
+				/>
+			</View>
+			<View style={styles.textContainer}>
+				<Text style={styles.nameText}>{name}</Text>
+				<View style={styles.textView}>
+					<Text style={styles.priceText}>{price}</Text>
+					<TouchableOpacity
+						style={styles.button}
+						activeOpacity={0.7}
+						onPress={onPress}>
+						<Text color={'white'}>Buy</Text>
+					</TouchableOpacity>
 				</View>
 			</View>
 		</View>
@@ -48,7 +46,7 @@ const Products = ({
 const styles = StyleSheet.create({
 	mainContainer: {
 		flexGrow: 1,
-		height: 335,
+		height: 330,
 		width: '48%',
 		backgroundColor: '#FFFFFF',
 		borderRadius: 15,
@@ -66,8 +64,9 @@ const styles = StyleSheet.create({
 		backgroundColor: '#eceff1',
 	},
 	textContainer: {
-		height: 120,
+		height: 130,
 		padding: 10,
+		marginBottom: 10,
 		justifyContent: 'space-between',
 	},
 	image: {
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
 	},
 	priceText: {
 		fontSize: 16,
-		paddingTop: 20,
+		paddingTop: 10,
 	},
 	button: {
 		backgroundColor: '#000000',
@@ -91,7 +90,6 @@ const styles = StyleSheet.create({
 		borderRadius: 25,
 		justifyContent: 'center',
 		alignItems: 'center',
-		marginTop: 10,
 	},
 	textView: {
 		flexDirection: 'row',

@@ -30,7 +30,7 @@ const ProductsScreen = ({ navigation }: ProductsScreenProps): JSX.Element => {
 	return (
 		<View style={styles.mainContainer}>
 			<Text style={styles.titleText} type={'body'}>
-				Fashion Store Products
+				Products
 			</Text>
 			<View style={styles.searchContainer}>
 				<SearchBar onSearch={searchProducts} />
