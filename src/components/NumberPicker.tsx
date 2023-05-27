@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
 	View,
 	StyleSheet,
@@ -10,11 +10,17 @@ import Add from '../assets/images/Add.png';
 import Remove from '../assets/images/Remove.png';
 
 type NumberPickerProps = {
+	value?: number;
 	onPress: (number: number) => void;
 };
 
-const NumberPicker = ({ onPress }: NumberPickerProps) => {
-	const [number, setNumber] = useState(1);
+const NumberPicker = ({ onPress, value = 1 }: NumberPickerProps) => {
+	const [number, setNumber] = useState(value);
+
+	useEffect(() => {
+		onPress(number);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [number]);
 
 	const onChangeNumber = (type: string): void => {
 		if (type === 'add') {
@@ -22,8 +28,6 @@ const NumberPicker = ({ onPress }: NumberPickerProps) => {
 		} else if (type === 'remove') {
 			setNumber(number - 1);
 		}
-
-		onPress(number);
 	};
 
 	return (
@@ -66,11 +70,12 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		fontWeight: '700',
 		textAlign: 'center',
-		marginLeft: 10,
-		marginRight: 10,
+		marginLeft: 5,
+		marginRight: 5,
 	},
 	imageContainer: {
 		backgroundColor: '#eceff1',
+		borderRadius: 50,
 	},
 });
 
