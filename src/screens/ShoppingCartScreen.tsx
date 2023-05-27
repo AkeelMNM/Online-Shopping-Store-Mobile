@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from '../redux/hook';
 import { RootStackParamList } from '../navigation/RootStackParamType';
 import { CartItems, Text } from '../components';
 import { CartItem } from '../types';
-import { fetchUsersCartItems } from '../redux/cart';
+import { fetchUsersCartItems, updateCartItem } from '../redux/cart';
 import _ from 'lodash';
 
 type ShoppingCartScreenProps = {
@@ -33,9 +33,28 @@ const ShoppingCartScreen = ({}: ShoppingCartScreenProps): JSX.Element => {
 		return <View style={styles.itemSeparator} />;
 	};
 
-	const updateCartItem = (id: string, value: number): void => {
-		console.log(id, value);
-		//TO DO: update the shopping cart item quantity
+	const onUpdateCartItem = (id: string, value: number): void => {
+		const cartItem = cart.find(item => item._id === id);
+
+		if (cartItem) {
+			const updatedCartItem: CartItem = {
+				_id: _.get(cartItem, '_id', ''),
+				userId: _.get(cartItem, 'userId', ''),
+				productId: _.get(cartItem, 'productId', ''),
+				variantId: _.get(cartItem, 'variantId', ''),
+				quantity: value,
+				title: _.get(cartItem, 'title', ''),
+				size: _.get(cartItem, 'size', ''),
+				color: _.get(cartItem, 'color', ''),
+				price: _.get(cartItem, 'price', 0),
+				isFreeShipping: _.get(cartItem, 'isFreeShipping', false),
+				image: _.get(cartItem, 'image', ''),
+				isPaymentComplete: _.get(cartItem, 'isPaymentComplete', false),
+			};
+			dispatch(updateCartItem(id, updatedCartItem));
+		} else {
+			console.log('Item not found');
+		}
 	};
 
 	const calculateTotalCost = (): number => {
@@ -48,12 +67,9 @@ const ShoppingCartScreen = ({}: ShoppingCartScreenProps): JSX.Element => {
 
 	return (
 		<View style={styles.mainContainer}>
-			<View style={styles.navigationContainer}>
-				<Text type={'body'} style={styles.titleText}>
-					Shopping Cart
-				</Text>
-				<Text type={'label'}>He</Text>
-			</View>
+			<Text type={'body'} style={styles.titleText}>
+				Shopping Cart
+			</Text>
 			<FlatList
 				data={cart}
 				renderItem={({ item, index }) => (
@@ -62,7 +78,7 @@ const ShoppingCartScreen = ({}: ShoppingCartScreenProps): JSX.Element => {
 						image={item.image}
 						name={item.title}
 						onPress={number =>
-							updateCartItem(_.get(item, '_id', ''), number)
+							onUpdateCartItem(_.get(item, '_id', ''), number)
 						}
 						price={item.price}
 						quantity={item.quantity}
@@ -90,7 +106,9 @@ const ShoppingCartScreen = ({}: ShoppingCartScreenProps): JSX.Element => {
 					style={styles.button}
 					activeOpacity={0.7}
 					onPress={onPressCheckOut}>
-					<Text color={'white'}>Buy</Text>
+					<Text color={'white'} type={'label'}>
+						Buy
+					</Text>
 				</TouchableOpacity>
 			</View>
 		</View>
@@ -101,14 +119,9 @@ const styles = StyleSheet.create({
 	mainContainer: {
 		flex: 1,
 	},
-	navigationContainer: {
-		padding: 10,
-		justifyContent: 'space-between',
-		flexDirection: 'row',
-	},
 	titleText: {
 		fontWeight: '700',
-		paddingBottom: 10,
+		padding: 10,
 	},
 	cartSection: {
 		paddingLeft: 5,
@@ -129,7 +142,9 @@ const styles = StyleSheet.create({
 	summaryTextContainer: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-		padding: 15,
+		paddingLeft: 15,
+		paddingRight: 15,
+		paddingBottom: 15,
 	},
 	summaryText: {
 		fontSize: 16,
@@ -140,7 +155,7 @@ const styles = StyleSheet.create({
 	},
 	button: {
 		backgroundColor: '#000000',
-		height: 50,
+		height: 45,
 		padding: 10,
 		borderRadius: 25,
 		justifyContent: 'center',

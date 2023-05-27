@@ -345,7 +345,7 @@ export const cartItems = [
 	{
 		_id: '2',
 		userId: 'U1',
-		productId: 'prod-1',
+		productId: 'prod-2',
 		variantId: 'var-1',
 		title: 'Formal Dress Shirts Casual Long Sleeve Slim Fit',
 		size: 'L',
