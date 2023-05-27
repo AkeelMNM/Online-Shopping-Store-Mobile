@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
 	View,
 	StyleSheet,
@@ -17,17 +17,17 @@ type NumberPickerProps = {
 const NumberPicker = ({ onPress, value = 1 }: NumberPickerProps) => {
 	const [number, setNumber] = useState(value);
 
-	useEffect(() => {
-		onPress(number);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [number]);
-
 	const onChangeNumber = (type: string): void => {
+		let changedNumber = number;
+
 		if (type === 'add') {
-			setNumber(number + 1);
+			changedNumber += 1;
 		} else if (type === 'remove') {
-			setNumber(number - 1);
+			changedNumber -= 1;
 		}
+
+		setNumber(changedNumber);
+		onPress(changedNumber);
 	};
 
 	return (
