@@ -6,7 +6,7 @@ import ProductsScreen from '../screens/ProductsScreen';
 import ShoppingCartScreen from '../screens/ShoppingCartScreen';
 import Home from '../assets/images/Home.png';
 import Search from '../assets/images/Search.png';
-import Option from '../assets/images/Option.png';
+import Settings from '../assets/images/Settings.png';
 import ShoppingCart from '../assets/images/ShoppingCart.png';
 import SettingsScreen from '../screens/SettingsScreen';
 
@@ -67,7 +67,7 @@ const BottomNavBar = (): JSX.Element => {
 				name="Settings"
 				component={SettingsScreen}
 				options={{
-					tabBarIcon: ({ focused }) => tabBarIcon(focused, Option),
+					tabBarIcon: ({ focused }) => tabBarIcon(focused, Settings),
 				}}
 			/>
 		</Tab.Navigator>

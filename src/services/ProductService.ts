@@ -6,13 +6,12 @@ const API_NAME: string = Config.FASHION_STORE_API_ADDRESS || '';
 
 export const fetchProducts = async (): Promise<Array<Product>> => {
 	try {
-		// const response = await fetch(`${API_NAME}/product`, {
-		// 	method: 'GET',
-		// });
+		const response = await fetch(`${API_NAME}/product`, {
+			method: 'GET',
+		});
 
-		// const responseData = await response.json();
-		const responseData = products;
-		//console.log('products fetched', responseData);
+		const responseData = await response.json();
+		console.log('products fetched', responseData);
 
 		return responseData || [];
 	} catch (error) {
@@ -38,17 +37,16 @@ export const fetchProductFilter = async (): Promise<Array<Product>> => {
 };
 
 export const fetchBestSellerProducts = async (): Promise<Array<Product>> => {
-	console.log(`${API_NAME}/product/bestseller`);
-
 	try {
-		// const response = await fetch(`${API_NAME}/product/bestseller`, {
-		// 	method: 'GET',
-		// 	headers: {
-		// 		'Content-type': 'application/json',
-		// 	},
-		// });
+		const response = await fetch(`${API_NAME}/product/bestseller`, {
+			method: 'GET',
+			headers: {
+				'Content-type': 'application/json',
+			},
+		});
 
-		// const responseData = await response.json();
+		const responseData1 = await response.json();
+		console.log(responseData1);
 		const responseData = products.filter(value => value.isBestSeller);
 		//console.log('best seller products fetched', responseData);
 

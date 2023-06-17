@@ -74,9 +74,7 @@ const HomeScreen = ({ navigation }: HomeScreenProps): JSX.Element => {
 					renderItem={({ item, index }) => (
 						<Products
 							key={index}
-							image={
-								'https://www.kasandbox.org/programming-images/avatars/leaf-blue.png'
-							}
+							image={item.variants[0].image}
 							name={item.title}
 							price={item.variants[0].price}
 							onPress={() => {

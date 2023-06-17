@@ -1,6 +1,7 @@
 import { Content } from '../types';
+import Config from 'react-native-config';
 
-const API_NAME: string = '';
+const API_NAME: string = Config.FASHION_STORE_API_ADDRESS || '';
 
 export const fetchContent = async (): Promise<Array<Content>> => {
 	try {

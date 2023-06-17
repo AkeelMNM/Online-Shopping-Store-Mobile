@@ -17,10 +17,10 @@ const InitialScreen = ({ navigation }: InitialScreenProps): JSX.Element => {
 	}, []);
 
 	const onBeforeRenderApp = async () => {
-		setTimeout(() => {
-			setShowLoader(false);
-			navigateToHome();
-		}, 500);
+		// setTimeout(() => {
+		setShowLoader(false);
+		navigateToHome();
+		// }, 500);
 	};
 
 	const navigateToHome = () => {
