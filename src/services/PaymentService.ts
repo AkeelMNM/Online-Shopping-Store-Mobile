@@ -1,6 +1,7 @@
 import { ApiResponse, Invoice } from '../types';
+import Config from 'react-native-config';
 
-const API_NAME: string = '';
+const API_NAME: string = Config.FASHION_STORE_API_ADDRESS || '';
 
 export const makePayment = async (invoice: Invoice): Promise<ApiResponse> => {
 	try {
