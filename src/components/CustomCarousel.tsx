@@ -20,7 +20,6 @@ const CustomCarousel = ({ data }: CustomCarouselProps): JSX.Element => {
 	};
 
 	const onSwipeLeft = (_gestureState: PanResponderGestureState) => {
-		console.log('ww');
 		setActiveIndex(activeIndex === data.length - 1 ? 0 : activeIndex + 1);
 	};
 

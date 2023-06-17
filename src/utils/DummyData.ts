@@ -14,7 +14,7 @@ export const products: Product[] = [
 				price: '$25',
 				stock: 0,
 				discount: '$5',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Blue.png',
+				image: 'https://drive.google.com/uc?id=1WgrMrPFzJuPJOclniif2V5njnxnVi2La',
 			},
 			{
 				id: 'var-1',
@@ -23,7 +23,7 @@ export const products: Product[] = [
 				price: '$25',
 				stock: 165,
 				discount: '$5',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Blue.png',
+				image: 'https://drive.google.com/uc?id=1WgrMrPFzJuPJOclniif2V5njnxnVi2La',
 			},
 			{
 				id: 'var-2',
@@ -32,7 +32,7 @@ export const products: Product[] = [
 				price: '$25',
 				stock: 183,
 				discount: '$5',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Blue.png',
+				image: 'https://drive.google.com/uc?id=1WgrMrPFzJuPJOclniif2V5njnxnVi2La',
 			},
 			{
 				id: 'var-3',
@@ -41,7 +41,7 @@ export const products: Product[] = [
 				price: '$25',
 				stock: 125,
 				discount: '$5',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Blue.png',
+				image: 'https://drive.google.com/uc?id=1WgrMrPFzJuPJOclniif2V5njnxnVi2La',
 			},
 			{
 				id: 'var-4',
@@ -50,7 +50,7 @@ export const products: Product[] = [
 				price: '$25',
 				stock: 267,
 				discount: '$5',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Black.png',
+				image: 'https://drive.google.com/uc?id=1cI30IA_vu9H91H22RQATPWNGXHqNz0Fm',
 			},
 			{
 				id: 'var-5',
@@ -59,7 +59,7 @@ export const products: Product[] = [
 				price: '$25',
 				stock: 123,
 				discount: '$5',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Black.png',
+				image: 'https://drive.google.com/uc?id=1cI30IA_vu9H91H22RQATPWNGXHqNz0Fm',
 			},
 			{
 				id: 'var-6',
@@ -68,7 +68,7 @@ export const products: Product[] = [
 				price: '$25',
 				stock: 66,
 				discount: '$5',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Black.png',
+				image: 'https://drive.google.com/uc?id=1cI30IA_vu9H91H22RQATPWNGXHqNz0Fm',
 			},
 			{
 				id: 'var-7',
@@ -77,7 +77,7 @@ export const products: Product[] = [
 				price: '$25',
 				stock: 99,
 				discount: '$5',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Violet.png',
+				image: 'https://drive.google.com/uc?id=1U-PzTUYyr9WO3Jm61kEk1S197ho5G7oW',
 			},
 			{
 				id: 'var-8',
@@ -86,7 +86,7 @@ export const products: Product[] = [
 				price: '$25',
 				stock: 154,
 				discount: '$5',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Violet.png',
+				image: 'https://drive.google.com/uc?id=1U-PzTUYyr9WO3Jm61kEk1S197ho5G7oW',
 			},
 			{
 				id: 'var-9',
@@ -95,7 +95,7 @@ export const products: Product[] = [
 				price: '$25',
 				stock: 153,
 				discount: '$5',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Violet.png',
+				image: 'https://drive.google.com/uc?id=1U-PzTUYyr9WO3Jm61kEk1S197ho5G7oW',
 			},
 			{
 				id: 'var-91',
@@ -104,7 +104,7 @@ export const products: Product[] = [
 				price: '$25',
 				stock: 0,
 				discount: '$5',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Long%20Sleeve%20Slim%20Fit%20-%20Violet.png',
+				image: 'https://drive.google.com/uc?id=1U-PzTUYyr9WO3Jm61kEk1S197ho5G7oW',
 			},
 		],
 	},
@@ -121,7 +121,7 @@ export const products: Product[] = [
 				price: '$35',
 				stock: 0,
 				discount: '5%',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Blue.png',
+				image: 'https://drive.google.com/uc?id=1ueZZRohN-q1BYKPo1kwD2uO5apQowpI3',
 			},
 			{
 				id: 'var-101',
@@ -130,7 +130,7 @@ export const products: Product[] = [
 				price: '$35',
 				stock: 152,
 				discount: '5%',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Blue.png',
+				image: 'https://drive.google.com/uc?id=1ueZZRohN-q1BYKPo1kwD2uO5apQowpI3',
 			},
 			{
 				id: 'var-11',
@@ -139,7 +139,7 @@ export const products: Product[] = [
 				price: '$35',
 				stock: 133,
 				discount: '5%',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Blue.png',
+				image: 'https://drive.google.com/uc?id=1ueZZRohN-q1BYKPo1kwD2uO5apQowpI3',
 			},
 			{
 				id: 'var-12',
@@ -148,7 +148,7 @@ export const products: Product[] = [
 				price: '$35',
 				stock: 55,
 				discount: '5%',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Blue.png',
+				image: 'https://drive.google.com/uc?id=1ueZZRohN-q1BYKPo1kwD2uO5apQowpI3',
 			},
 			{
 				id: 'var-13',
@@ -156,8 +156,8 @@ export const products: Product[] = [
 				color: 'gray',
 				price: '$35',
 				stock: 55,
-				discount: '0%',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Gray.png',
+				discount: '5%',
+				image: 'https://drive.google.com/uc?id=1Bd79JX0zimhYe3BttEBo79fCu2DrQLnr',
 			},
 			{
 				id: 'var-14',
@@ -166,7 +166,7 @@ export const products: Product[] = [
 				price: '$35',
 				stock: 167,
 				discount: '5%',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Gray.png',
+				image: 'https://drive.google.com/uc?id=1Bd79JX0zimhYe3BttEBo79fCu2DrQLnr',
 			},
 			{
 				id: 'var-15',
@@ -175,7 +175,7 @@ export const products: Product[] = [
 				price: '$35',
 				stock: 176,
 				discount: '5%',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Gray.png',
+				image: 'https://drive.google.com/uc?id=1Bd79JX0zimhYe3BttEBo79fCu2DrQLnr',
 			},
 			{
 				id: 'var-16',
@@ -184,7 +184,7 @@ export const products: Product[] = [
 				price: '$35',
 				stock: 129,
 				discount: '5%',
-				image: 'https://localhost:5000/public/images/Formal%20Dress%20Shirts%20Casual%20Short%20Sleeve%20Slim%20Fit%20-%20Gray.png',
+				image: 'https://drive.google.com/uc?id=1Bd79JX0zimhYe3BttEBo79fCu2DrQLnr',
 			},
 		],
 	},
@@ -201,7 +201,7 @@ export const products: Product[] = [
 				price: '$20',
 				stock: 212,
 				discount: '0%',
-				image: 'https://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Gray.png',
+				image: 'https://drive.google.com/uc?id=10c_VhHRWPcbcdKmOtCSoOnX_kPEoHnF2',
 			},
 			{
 				id: 'var-18',
@@ -210,7 +210,7 @@ export const products: Product[] = [
 				price: '$20',
 				stock: 166,
 				discount: '0%',
-				image: 'https://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Gray.png',
+				image: 'https://drive.google.com/uc?id=10c_VhHRWPcbcdKmOtCSoOnX_kPEoHnF2',
 			},
 			{
 				id: 'var-19',
@@ -219,7 +219,7 @@ export const products: Product[] = [
 				price: '$20',
 				stock: 155,
 				discount: '0%',
-				image: 'https://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Gray.png',
+				image: 'https://drive.google.com/uc?id=10c_VhHRWPcbcdKmOtCSoOnX_kPEoHnF2',
 			},
 			{
 				id: 'var-20',
@@ -228,7 +228,7 @@ export const products: Product[] = [
 				price: '$20',
 				stock: 167,
 				discount: '0%',
-				image: 'https://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Pink.png',
+				image: 'https://drive.google.com/uc?id=1eiwHYi0xZgr0SsMeF9FYmxEF0BIJk_ib',
 			},
 			{
 				id: 'var-21',
@@ -237,7 +237,7 @@ export const products: Product[] = [
 				price: '$20',
 				stock: 132,
 				discount: '0%',
-				image: 'https://localhost:5000/public/images/Soft%20Summer%20Short%20Slim%20Fit%20-%20Pink.png',
+				image: 'https://drive.google.com/uc?id=1eiwHYi0xZgr0SsMeF9FYmxEF0BIJk_ib',
 			},
 		],
 	},
@@ -253,8 +253,8 @@ export const products: Product[] = [
 				color: 'blue',
 				price: '$45',
 				stock: 23,
-				discount: '0%',
-				image: 'https://localhost:5000/public/images/Icy%20Blue%20Polo%20Dress%20-%20Blue.png',
+				discount: '5%',
+				image: 'https://drive.google.com/uc?id=1Qlci-y6N6hvZa_euIpSzBb9JYMOMElkH',
 			},
 			{
 				id: 'var-23',
@@ -263,7 +263,7 @@ export const products: Product[] = [
 				price: '$45',
 				stock: 155,
 				discount: '$5',
-				image: 'https://localhost:5000/public/images/Icy%20Blue%20Polo%20Dress%20-%20Blue.png',
+				image: 'https://drive.google.com/uc?id=1Qlci-y6N6hvZa_euIpSzBb9JYMOMElkH',
 			},
 			{
 				id: 'var-24',
@@ -272,7 +272,7 @@ export const products: Product[] = [
 				price: '$45',
 				stock: 177,
 				discount: '$10',
-				image: 'https://localhost:5000/public/images/Icy%20Blue%20Polo%20Dress%20-%20Blue.png',
+				image: 'https://drive.google.com/uc?id=1Qlci-y6N6hvZa_euIpSzBb9JYMOMElkH',
 			},
 		],
 	},
@@ -289,7 +289,7 @@ export const products: Product[] = [
 				price: '$55',
 				stock: 67,
 				discount: '$5',
-				image: 'https://localhost:5000/public/images/Tiered%20Wave%20Shirt%20Dress%20-%20Navy%20&%20White.png',
+				image: 'https://drive.google.com/uc?id=1ggvVczg_tOE-Z9BBCHv2QRIveVT_0lDP',
 			},
 			{
 				id: 'var-26',
@@ -298,7 +298,7 @@ export const products: Product[] = [
 				price: '$55',
 				stock: 55,
 				discount: '$5',
-				image: 'https://localhost:5000/public/images/Tiered%20Wave%20Shirt%20Dress%20-%20Navy%20&%20White.png',
+				image: 'https://drive.google.com/uc?id=1ggvVczg_tOE-Z9BBCHv2QRIveVT_0lDP',
 			},
 			{
 				id: 'var-27',
@@ -307,7 +307,7 @@ export const products: Product[] = [
 				price: '$55',
 				stock: 100,
 				discount: '15%',
-				image: 'https://localhost:5000/public/images/Tiered%20Wave%20Shirt%20Dress%20-%20Navy%20&%20White.png',
+				image: 'https://drive.google.com/uc?id=1ggvVczg_tOE-Z9BBCHv2QRIveVT_0lDP',
 			},
 		],
 	},
